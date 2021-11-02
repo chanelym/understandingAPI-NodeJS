@@ -26,7 +26,7 @@ app.get ('/recipes/:id', (req,res) => {
     if (!recipe) {
         res.status('404').send(`Recipe with id ${id} was not found` );
     } else {
-        res.status('200').send({ recipe });
+        res.status(200).send({ recipe });
     }
 });
 
@@ -93,15 +93,21 @@ function checkMusicInArray (req, res, next) {
 };
 
 app.get ('/musics', (req,res) => {
-    res.status('200').send({ musics, message: 'Welcome' });
+    res.status('200').send({  message: 'Welcome, we have these songs with us: ', musics });
 });
 
 app.get ('/musics/:id', checkMusicInArray, (req,res) => {
-    
+    const { id } = req.params;
+    const music = musics[id];
+
+    res.status(200).send({ music });
 });
 
 app.post('/musics', checkMusicExists, (req, res) => {
-    
+    const name = req.body;
+    musics.push(name);
+
+    res.status(200).json({ message: 'Song successfully created!', details: musics, redirect: '/musics/' });
 });
 
 app.put("/musics/:id", checkMusicInArray, (req, res) => {
