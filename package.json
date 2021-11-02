@@ -1,0 +1,26 @@
+{
+  "name": "understandingcrud-nodejs",
+  "version": "1.0.0",
+  "description": "Exercises to understand CRUD + NodeJS + Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chanelym/understandingCRUD-NodeJS.git"
+  },
+  "author": "chanelym",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chanelym/understandingCRUD-NodeJS/issues"
+  },
+  "homepage": "https://github.com/chanelym/understandingCRUD-NodeJS#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14",
+    "prompt-sync": "^4.2.0"
+  }
+}
