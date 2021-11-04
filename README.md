@@ -14,9 +14,9 @@ Inside misc folder you can try each of Thunder's Collections for both Endpoints 
 
 ### Endpoints for recipes
 
-`GET /recipes (ALL)`
+`GET /recipes` (ALL)
 
- - Returns an array with all registered recipes.
+ - Returns an array with all registered recipes (this array have only on recipe as example)
 
    ```
    {
@@ -26,18 +26,17 @@ Inside misc folder you can try each of Thunder's Collections for both Endpoints 
          "image": "https://cdn.tasteatlas.com/images/dishes/5c33b6059a634e6195f80ff37c3f0997.jpg?mw=1300"
     }
    ```
+ - Status Code: 200
 
-	- Status Code: 200.
+`GET /recipes/:id` (By ID)
 
-`GET /recipes/:id (By ID)`
-
- - Returns a recipe by it's ID.
- - Status Code: 200.
+ - Returns a recipe by it's ID
+ - Status Code: 200
  - Status Code: 404 if recipe's ID is not inside my Array
 
 `POST /recipes`
 
-- Create a new recipe
+- Create a new recipe.
 
   ```
   {
@@ -48,7 +47,7 @@ Inside misc folder you can try each of Thunder's Collections for both Endpoints 
   }
   ```
 
-- Status Code: 200.
+- Status Code: 200
 
 `PUT /recipes/:id`
 
@@ -63,19 +62,19 @@ Inside misc folder you can try each of Thunder's Collections for both Endpoints 
   }
   ```
 
- - Status Code: 200.
+ - Status Code: 200
  - Status Code: 404 if recipe's ID is not inside my Array
 
 `DELETE /recipes/:id`
 
- - Status Code: 200.
+ - Status Code: 200
  - Status Code: 404 if recipe's ID is not inside my Array
 
 ### Endpoints for musics
 
-`GET /musics (ALL)`
+`GET /musics` (ALL)
 
- - Returns an array with all registered musics (my array have only on music to start)
+ - Returns an array with all registered musics (this array have only on music as example)
 
    ```
    {
@@ -86,9 +85,9 @@ Inside misc folder you can try each of Thunder's Collections for both Endpoints 
     }
    ```
 
-   Status Code: 200
+ - Status Code: 200
 
-`GET /musics/:id (By ID)`
+`GET /musics/:id` (By ID)
 
  - Returns a music by it's ID
  - Status Code: 200
@@ -106,11 +105,9 @@ Inside misc folder you can try each of Thunder's Collections for both Endpoints 
         "year": 2021
   }
   ```
-
-  Status Code: 200
-
+  
+- Status Code: 200
 - Status Code 400 if name field is empty
-
 - Redirects to GET /musics
 
 `PUT /musics/:id`
@@ -126,13 +123,10 @@ Inside misc folder you can try each of Thunder's Collections for both Endpoints 
    }
    ```
 
-   Status Code: 200
-
- - Status Code: 404 if music's ID is not inside my Array
-
- - Status Code 400 if name field is empty
-
- - Redirects to GET /musics/:id
+- Status Code: 200
+- Status Code: 404 if music's ID is not inside my Array
+- Status Code 400 if name field is empty
+- Redirects to GET /musics/:id
 
 `DELETE /musics/:id`
 
