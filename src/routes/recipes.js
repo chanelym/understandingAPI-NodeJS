@@ -32,6 +32,11 @@ router.get ('/:id', (req,res) => {
 router.post('/', (req, res) => {
     const recipe = req.body;
     const id = recipes.length;
+
+    if(!req.body.name || !req.body.cuisine || !req.body.history || !req.body.image) {
+        res.status(400).json({ error: 'I dont accept empty fields' });   
+    };
+
     recipes.push(recipe);
     res.status(200).send({ message: `Recipe Successfully added! Recipe ID: ${id}` });
 });
@@ -41,8 +46,10 @@ router.put("/:id", (req, res) => {
     const recipe = req.body;
     const false_id = recipes[id];
 
-    if( !false_id ) { 
+    if ( !false_id ) { 
         res.status(404).send(`Recipe with id ${id} was not found` );
+    } if (!req.body.name || !req.body.cuisine || !req.body.history || !req.body.image) {
+        res.status(400).json({ error: 'I dont accept empty fields' });   
     } else {
         recipes[id] = recipe;
         res.status(200).send({ message: `Recipe Successfully Modified! Recipe ID: ${id}` });

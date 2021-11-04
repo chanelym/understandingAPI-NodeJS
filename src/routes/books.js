@@ -15,8 +15,8 @@ let books = [
 // Check if the Book title is inside Body
 
 function checkBookExists (req, res, next) {
-    if (!req.body.title) {
-    return res.status(400).json({ error: 'Book title is required' });   
+    if (!req.body.title || !req.body.author || !req.body.publisher || !req.body.pages) {
+    return res.status(400).json({ error: 'I dont accept empty fields' });   
     }
     return next(); 
 }

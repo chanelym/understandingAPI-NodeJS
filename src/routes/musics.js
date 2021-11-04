@@ -15,8 +15,8 @@ let musics = [
 // Check if the song name is inside Body
 
 function checkMusicExists (req, res, next) {
-    if (!req.body.name) {
-    return res.status(400).json({ error: 'Music name is required' });   
+    if (!req.body.name || !req.body.artist || !req.body.duration || !req.body.year) {
+    return res.status(400).json({ error: 'I dont accept empty fields' });   
     }
     return next(); 
 }
