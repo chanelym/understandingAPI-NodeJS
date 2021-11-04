@@ -14,30 +14,29 @@ let recipes = [
 
 // Rabanada is the BEST, add some banana with it. =D
 
-router.get ('/recipes', (req,res) => {
-    console.log(teste);
+router.get ('/', (req,res) => {
     res.status(200).send({ recipes, message: 'Welcome' });
 });
 
-router.get ('/recipes/:id', (req,res) => {
+router.get ('/:id', (req,res) => {
     const id = req.params.id;
     const recipe = recipes[id];
     
     if (!recipe) {
-        res.status('404').send(`Recipe with id ${id} was not found` );
+        res.status(404).send(`Recipe with id ${id} was not found` );
     } else {
         res.status(200).send({ recipe });
     }
 });
 
-router.post('/recipes', (req, res) => {
+router.post('/', (req, res) => {
     const recipe = req.body;
     const id = recipes.length;
     recipes.push(recipe);
     res.status(200).send({ message: `Recipe Successfully added! Recipe ID: ${id}` });
 });
 
-router.put("/recipes/:id", (req, res) => {
+router.put("/:id", (req, res) => {
     const id = req.params.id;
     const recipe = req.body;
     const false_id = recipes[id];
@@ -50,10 +49,8 @@ router.put("/recipes/:id", (req, res) => {
     }
 });
 
-router.delete('/recipes/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     const id = req.params.id;
-    res.json(recipes[id]);
-    const recipe = req.body;
     const false_id = recipes[id];
 
     if( !false_id ) { 

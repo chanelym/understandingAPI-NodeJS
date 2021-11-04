@@ -5,13 +5,13 @@ const port = 3000;
 app.use(express.json());
 
 app.get('/', (req,res) => {
-    res.status(200).send({ message: 'Welcome to my Humble Home' }); 
+    res.status(200).send({ message: 'Welcome to my Humble Home. You can go to: /recipes or /musics' }); 
 });
 
-const musicsRouter = require('./config/routes/musics'); 
+const musicsRouter = require('./src/routes/musics'); 
 app.use('/musics', musicsRouter); 
 
-const recipesRouter = require('./config/routes/recipes');
+const recipesRouter = require('./src/routes/recipes');
 app.use('/recipes', recipesRouter);
 
 app.listen(port, () => console.info(`Server listening at http://localhost:${port}`));
