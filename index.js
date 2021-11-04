@@ -14,4 +14,7 @@ app.use('/musics', musicsRouter);
 const recipesRouter = require('./src/routes/recipes');
 app.use('/recipes', recipesRouter);
 
+const booksRouter = require('./src/routes/books');
+app.use('/books', booksRouter);
+
 app.listen(port, () => console.info(`Server listening at http://localhost:${port}`));
