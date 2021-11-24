@@ -4,8 +4,6 @@ A simple NodeJS + Express.js RESTful API serving data about recipes and musics.
 
 API Version: 1.0
 
-<a href="https://www.youtube.com/watch?v=mUV5ZwIC9_g" target="_blank" rel="noopener"><span>Example Text</span> </a>.
-
 ## More about
 
 My main goal is organize my knowledge about MVC basics and improve coding (I'm a Padawan, so.. you know how it's gonna be, right?). :trollface:
